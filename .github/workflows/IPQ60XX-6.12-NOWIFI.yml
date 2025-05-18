@@ -152,13 +152,13 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
+        name: LiBwrt ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
         tag: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
-          **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
+          **This is LiBwrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 固件信息(无WIFI)
           - 带有线NSS、无WIFI的6.12内核固件
           - 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
